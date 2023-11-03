@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="en" class="h-full min-h-screen">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+    <title>Frontend Mentor | Notifications page</title>
+    <link href="./dist/output.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body
+    class="h-screen min-h-full flex-row items-center justify-center font-jakarta lg:flex lg:bg-very-light-grayish-blue"
+  >
+    <div
+      class="mx-4 my-6 flex h-auto flex-col rounded-3xl lg:m-0 lg:w-[730px] lg:rounded-xl lg:bg-white lg:px-8 lg:pb-4 lg:pt-9 lg:shadow-lg"
+    >
+      <div class="mb-5 flex flex-row items-center justify-between">
+        <div class="flex flex-row items-center gap-[10px]">
+          <h2 class="text-[1.3rem] font-extrabold lg:text-2xl">
+            Notifications
+          </h2>
+          <p
+            class="self-center rounded-md bg-blue px-[12px] py-[2.5px] text-sm font-extrabold text-white"
+            id="number"
+          >
+            3
+          </p>
+        </div>
+        <p
+          class="cursor-pointer self-end text-[15px] text-grayish-blue transition-all duration-300 hover:text-blue"
+          id="toggleNotifs"
+          onclick="resetNumber()"
+        >
+          Mark all as read
+        </p>
+      </div>
+      <div
+        class="flex cursor-pointer flex-row items-center gap-3 rounded-xl bg-very-light-grayish-blue py-[16px] pl-[16px] lg:gap-5"
+        id="comment1"
+        onclick="decrementNumber(event)"
+      >
+        <img
+          src="./assets/images/avatar-mark-webber.webp"
+          alt="mark-webber"
+          class="h-10 self-start"
+        />
+        <div
+          class="flex flex-col gap-1 text-[15px] leading-[1.14rem] text-dark-grayish-blue"
+        >
+          <div>
+            <em
+              class="mr-1 cursor-pointer font-extrabold not-italic text-very-dark-blue transition-all duration-300 hover:text-blue"
+              >Mark Webber</em
+            >
+            reacted to your recent post
+            <em
+              class="cursor-pointer font-extrabold not-italic text-dark-grayish-blue transition-all duration-300 hover:text-blue"
+              >My first tournament today!</em
+            >
+            <div
+              class="ml-1 inline-block h-[10px] w-[10px] rounded-full bg-red"
+              id="circle1"
+            ></div>
+          </div>
+          <p class="text-grayish-blue">1m ago</p>
+        </div>
+      </div>
+      <div
+        class="mt-[10px] flex cursor-pointer flex-row items-center gap-3 rounded-xl bg-very-light-grayish-blue py-[16px] pl-[16px] lg:gap-5"
+        id="comment2"
+        onclick="decrementNumber(event)"
+      >
+        <img
+          src="./assets/images/avatar-angela-gray.webp"
+          alt="angela-gray"
+          class="h-10 self-start"
+        />
+        <div
+          class="flex flex-col gap-1 text-[15px] leading-[1.14rem] text-dark-grayish-blue"
+        >
+          <div>
+            <em
+              class="mr-1 cursor-pointer font-extrabold not-italic text-very-dark-blue transition-all duration-300 hover:text-blue"
+              >Angela Gray</em
+            >
+            followed you
+            <div
+              class="ml-1 inline-block h-[10px] w-[10px] rounded-full bg-red"
+              id="circle2"
+            ></div>
+          </div>
+          <p class="text-grayish-blue">5m ago</p>
+        </div>
+      </div>
+      <div
+        class="mt-[10px] flex cursor-pointer flex-row items-center gap-3 rounded-xl bg-very-light-grayish-blue py-[16px] pl-[16px] lg:gap-5"
+        id="comment3"
+        onclick="decrementNumber(event)"
+      >
+        <img
+          src="./assets/images/avatar-jacob-thompson.webp"
+          alt="jacob-thompson"
+          class="h-10 self-start"
+        />
+        <div
+          class="flex flex-col gap-1 text-[15px] leading-[1.14rem] text-dark-grayish-blue"
+        >
+          <div>
+            <em
+              class="mr-1 cursor-pointer font-extrabold not-italic text-very-dark-blue transition-all duration-300 hover:text-blue"
+              >Jacob Thompson</em
+            >
+            has joined your group
+            <em
+              class="cursor-pointer font-extrabold not-italic text-blue transition-all duration-300 hover:text-blue"
+              >Chess Club</em
+            >
+            <div
+              class="ml-1 inline-block h-[10px] w-[10px] rounded-full bg-red"
+              id="circle3"
+            ></div>
+          </div>
+          <p class="text-grayish-blue">1 day ago</p>
+        </div>
+      </div>
+      <div
+        class="mt-[10px] flex flex-row items-center gap-3 py-[12px] pl-[16px] lg:gap-5"
+      >
+        <img
+          src="./assets/images/avatar-rizky-hasanuddin.webp"
+          alt="rizky-hasanuddin"
+          class="h-10 self-start"
+        />
+        <div
+          class="flex flex-col gap-1 text-[15px] leading-[1.14rem] text-dark-grayish-blue"
+        >
+          <div>
+            <em
+              class="mr-1 cursor-pointer font-extrabold not-italic text-very-dark-blue transition-all duration-300 hover:text-blue"
+              >Rizky Hasanuddin</em
+            >
+            sent you a private message
+          </div>
+          <p class="text-grayish-blue">5 days ago</p>
+          <div
+            class="mr-3 mt-2 cursor-pointer rounded-md border-[1px] border-light-grayish-blue-2 px-[14px] py-[16px] transition-all duration-300 hover:bg-light-grayish-blue-1"
+          >
+            Hello, thanks for setting up the Chess Club. I've been a member for
+            a few weeks now and I'm already having lots of fun and improving my
+            game.
+          </div>
+        </div>
+      </div>
+      <div
+        class="mt-[10px] flex flex-row items-center gap-3 py-[15px] pl-[16px] lg:gap-5"
+      >
+        <img
+          src="./assets/images/avatar-kimberly-smith.webp"
+          alt="kimberly-smith"
+          class="h-10 self-start"
+        />
+        <div
+          class="flex flex-col gap-1 text-[15px] leading-[1.14rem] text-dark-grayish-blue lg:gap-0"
+        >
+          <div class="flex flex-row justify-between lg:justify-start">
+            <div class="">
+              <em
+                class="mr-1 cursor-pointer font-extrabold not-italic text-very-dark-blue transition-all duration-300 hover:text-blue"
+                >Kimberly Smith</em
+              >
+              commented on your picture
+            </div>
+          </div>
+          <p class="text-grayish-blue">1 week ago</p>
+        </div>
+        <img
+          src="./assets/images/image-chess.webp"
+          alt="chess"
+          class="right-0 ml-3 mr-3 h-10 cursor-pointer rounded-md lg:ml-24"
+        />
+      </div>
+      <div
+        class="mt-[10px] flex flex-row items-center gap-3 py-[12px] pl-[16px] lg:gap-5"
+      >
+        <img
+          src="./assets/images/avatar-nathan-peterson.webp"
+          alt="nathan-peterson"
+          class="h-10 self-start"
+        />
+        <div
+          class="flex flex-col gap-1 text-[15px] leading-[1.14rem] text-dark-grayish-blue"
+        >
+          <div>
+            <em
+              class="mr-1 cursor-pointer font-extrabold not-italic text-very-dark-blue transition-all duration-300 hover:text-blue"
+              >Nathan Peterson</em
+            >
+            reacted to your recent post
+            <em
+              class="cursor-pointer font-extrabold not-italic text-dark-grayish-blue"
+              >5 end-game strategies to increase your win rate</em
+            >
+          </div>
+          <p class="text-grayish-blue">2 weeks ago</p>
+        </div>
+      </div>
+      <div
+        class="mt-[10px] flex flex-row items-center gap-3 py-[17px] pl-[16px] lg:gap-5"
+      >
+        <img
+          src="./assets/images/avatar-anna-kim.webp"
+          alt="anna-kim"
+          class="h-10 self-start"
+        />
+        <div
+          class="flex flex-col gap-1 text-[15px] leading-[1.14rem] text-dark-grayish-blue"
+        >
+          <div>
+            <em
+              class="mr-1 cursor-pointer font-extrabold not-italic text-very-dark-blue transition-all duration-300 hover:text-blue"
+              >Anna Kim</em
+            >
+            left the group
+            <em class="font-extrabold not-italic text-blue">Chess Club</em>
+          </div>
+          <p class="text-grayish-blue">2 weeks ago</p>
+        </div>
+      </div>
+    </div>
+    <script src="./main.js"></script>
+  </body>
+</html>
